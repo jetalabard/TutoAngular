@@ -1,27 +1,40 @@
 # Todos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
+J'ai réalisé un projet exemple en Angular pour la gestion des tâches à faire.
 
-## Development server
+### Environnement
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+J'ai utilisé docker pour me fournir un environnement avec une base de données MongoDB.
+Lien Docker: 
+ - https://docs.docker.com/toolbox/overview/
+Lien pour télécharger les images docker via un proxy :
+ - https://medium.com/@suci/running-docker-on-windows-7-behind-a-proxy-b363d3966d7
+Lien de l'image à télécharger :
+ - https://hub.docker.com/r/sesteva/deployd/
 
-## Code scaffolding
+docker run --name deployd -p 2403:2403 -i -t sesteva/deployd
+docker start deployd
+Pour passer le proxy est accéder à la base MongoDB
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+créer fichier proxy-conf.json
+{
+  "/api": {
+    "target": "http://192.168.99.100:2403",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}
 
-## Build
+ng serve --proxy-config proxy.conf.json
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+### Design
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+J'ai utilisé Material Design pour la mise en forme de cet exemple.
 
-## Running end-to-end tests
+Documentation:
+ - https://material.angular.io/guide/getting-started
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
