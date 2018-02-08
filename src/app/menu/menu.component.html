@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <button mat-button [matMenuTriggerFor]="menu" class="menu">
+    <mat-icon svgIcon="menu"></mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <a href="https://material.angular.io">Doc Material Design</a>
+    </button>
+    <button mat-menu-item>
+      <a href="https://www.materialpalette.com">Doc Material Palette/Icon</a>
+    </button>
+    <button mat-menu-item>
+      <a href="https://angular.io/">Doc Angular</a>
+    </button>
+  </mat-menu>
+  <mat-icon svgIcon="app"></mat-icon>My todos
+</mat-toolbar>

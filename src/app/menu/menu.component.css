@@ -1,0 +1,9 @@
+.menu {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  color:white;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
